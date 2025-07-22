@@ -1,22 +1,20 @@
 package noemibaglieri.entities;
 
-import jakarta.persistence.*;
+
 import lombok.*;
 import noemibaglieri.enums.CategoryType;
 
-@Entity
-@Table(name = "posts")
+import java.util.Random;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
 public class BlogPost {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     @Setter(AccessLevel.NONE)
     private long id;
 
-    @Enumerated
     private CategoryType categoryType;
 
     private String title;
@@ -25,10 +23,11 @@ public class BlogPost {
 
     private String content;
 
-    @Column(name = "reading_time")
     private int readingTime;
 
     public BlogPost(CategoryType categoryType, String title, String content, int readingTime, String cover) {
+        Random rndm = new Random();
+        this.id = rndm.nextInt(1, 10000);
         this.categoryType = categoryType;
         this.title = title;
         this.content = content;

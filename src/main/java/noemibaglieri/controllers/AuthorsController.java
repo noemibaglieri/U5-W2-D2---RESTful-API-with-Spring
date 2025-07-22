@@ -28,6 +28,7 @@ public class AuthorsController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Author createAuthor(@RequestBody NewAuthorPayload body) {
+        System.out.println(body);
         return this.authorsService.save(body);
     }
 

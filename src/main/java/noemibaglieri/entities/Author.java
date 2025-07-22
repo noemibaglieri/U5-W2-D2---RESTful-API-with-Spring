@@ -4,33 +4,24 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.LocalDate;
+import java.util.Random;
 
-@Entity
-@Table(name = "authors")
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
 public class Author {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Setter(AccessLevel.NONE)
     private long id;
-
-    @Column(name = "first_name")
     private String firstName;
-
-    @Column(name = "last_name")
     private String lastName;
-
     private String email;
-
-    @Column(name = "date_of_birth")
-    private LocalDate dateOfBirth;
-
+    private String dateOfBirth;
     private String avatar;
 
-    public Author(String firstName, String lastName, String email, LocalDate dateOfBirth, String avatar) {
+    public Author(String firstName, String lastName, String email, String dateOfBirth, String avatar) {
+        Random rndm = new Random();
+        this.id = rndm.nextInt(1, 10000);
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

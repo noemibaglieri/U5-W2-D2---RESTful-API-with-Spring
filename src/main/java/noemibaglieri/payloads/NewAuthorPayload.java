@@ -13,7 +13,7 @@ public class NewAuthorPayload {
     private String firstName;
     private String lastName;
     private String email;
-    private LocalDate dateOfBirth;
+    private String dateOfBirth;
 
     @Override
     public String toString() {
