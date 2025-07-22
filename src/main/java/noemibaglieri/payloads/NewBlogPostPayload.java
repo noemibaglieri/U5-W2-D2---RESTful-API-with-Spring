@@ -17,11 +17,10 @@ public class NewBlogPostPayload {
 
     @Override
     public String toString() {
-        return
-                "categoryType=" + categoryType +
+        return "categoryType='" + categoryType + '\'' +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
-                ", readingTime=" + readingTime +
-                '}';
+                ", readingTime=" + readingTime + " min";
     }
+
 }

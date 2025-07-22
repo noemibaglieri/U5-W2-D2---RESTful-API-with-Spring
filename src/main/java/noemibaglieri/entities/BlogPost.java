@@ -28,10 +28,11 @@ public class BlogPost {
     @Column(name = "reading_time")
     private int readingTime;
 
-    public BlogPost(CategoryType categoryType, String title, String content, int readingTime) {
+    public BlogPost(CategoryType categoryType, String title, String content, int readingTime, String cover) {
         this.categoryType = categoryType;
         this.title = title;
         this.content = content;
         this.readingTime = readingTime;
+        this.cover = cover;
     }
 }
